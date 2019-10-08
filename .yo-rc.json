@@ -1,0 +1,46 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "id.co.elevenia.legacy.mailer",
+      "nativeLanguage": "in"
+    },
+    "jhipsterVersion": "6.3.1",
+    "applicationType": "microservice",
+    "baseName": "EleveniaLegacyMailer",
+    "packageName": "id.co.elevenia.legacy.mailer",
+    "packageFolder": "id/co/elevenia/legacy/mailer",
+    "serverPort": "10011",
+    "authenticationType": "uaa",
+    "uaaBaseName": "EleveniaLegacyAuth",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "oracle",
+    "prodDatabaseType": "oracle",
+    "searchEngine": "elasticsearch",
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZWU0ZTAxODRhOTE2YWNiNGViOWIxOTFhYzQyZTViMmEwMjJjOGUyYWMzMzU5MjdkNWJlMTA4MTFiZjJiMjI0OTVkMTNiNTE0NDk3ZDdkMDMyNTY0NTkxNGU5YzVkZGU5NDQzOGM1ZDdmMGQwMDUzMmI5NWRmODJhMmVmZmJmZjY=",
+    "embeddableLaunchScript": false,
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "in",
+    "languages": [
+      "in",
+      "en"
+    ],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
