@@ -17,14 +17,25 @@ logging:
   level:
     ROOT: DEBUG
     io.github.jhipster: DEBUG
-    id.co.elevenia.legacy.mailer: DEBUG
-
+    id.co.elevenia.legacy: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.jdbc.core.JdbcTemplate: DEBUG
+    org.springframework.jdbc.core.StatementCreatorUtils: TRACE
+    #org.hibernate.SQL: DEBUG
+    #org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org:
+        hibernate:
+            type: 
+                descriptor:
+                    sql: trace
+                    BasicBinder: trace
+            SQL: debug
 eureka:
   instance:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
+      defaultZone: http://admin:admin@172.18.186.48:8761/eureka/
 
 management:
   health:
@@ -36,6 +47,7 @@ spring:
     active: dev
     include:
       - swagger
+      - no-liquibase
       # Uncomment to activate TLS for the dev profile
       #- tls
   devtools:
@@ -48,8 +60,8 @@ spring:
       indent-output: true
   kafka:
     consumer:
-      bootstrap-servers: localhost:9092
-      group-id: group_id
+      bootstrap-servers: 172.18.183.67:9092 # velbotc2
+      group-id: EleveniaLegacyAuthGroup1
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -59,14 +71,16 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:oracle:thin:@localhost:1521:xe
-    username: system
-    password: oracle
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@172.18.186.26:1521:INDDB
+    username: INDON
+    password: ajtwl#dev1
     hikari:
+      connection-test-query: select 1 from dual
       poolName: Hikari
       auto-commit: false
   jpa:
-    database-platform: org.hibernate.dialect.Oracle12cDialect
+    database-platform: org.hibernate.dialect.Oracle10gDialect
     database: ORACLE
     show-sql: true
     properties:
